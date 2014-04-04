@@ -11,11 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140404192924) do
+ActiveRecord::Schema.define(version: 20140404200900) do
 
   create_table "church", force: true do |t|
     t.string "church_name"
     t.string "email"
+  end
+
+  create_table "officials", force: true do |t|
+    t.string  "name"
+    t.string  "email"
+    t.string  "number"
+    t.boolean "official"
+    t.boolean "admin"
+  end
+
+  create_table "players", force: true do |t|
+    t.string  "name"
+    t.string  "number"
+    t.string  "email"
+    t.string  "age"
+    t.boolean "coach"
+    t.boolean "pitcher"
+    t.boolean "catcher"
+    t.boolean "first"
+    t.boolean "second"
+    t.boolean "third"
+    t.boolean "short"
+    t.boolean "outfield"
+  end
+
+  create_table "teams", force: true do |t|
+    t.string "name"
+    t.string "coach"
+    t.string "contact"
   end
 
 end
