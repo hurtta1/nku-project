@@ -2,4 +2,5 @@
 
 #create initial pages skeleton
 #create tables for team, player, church, officials
-#create approprite links for each page
+#create skeleton models for player, team
+#create approprite links for each page on homepage
