@@ -3,7 +3,7 @@ class TeamsController < ApplicationController
   end
   
   def new 
-    @player = Player.new
+    @team = Team.new
   end
   
   def create
@@ -23,5 +23,4 @@ class TeamsController < ApplicationController
   def team_params
     params.require(:team).permit(:church_name, :contact)
   end
-end
 end

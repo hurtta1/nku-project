@@ -9,7 +9,7 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new(params[:player].permit(:name, :number, :email, :age))
     if @player.save
-      redirect_to player_path, message: "Successfully signed up!."
+      redirect_to players_path, message: "Successfully signed up!."
     end
   end
   

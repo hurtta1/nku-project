@@ -4,21 +4,20 @@
   <%= stylesheet_link_tag "application" %>
   </head>
 <body>
-<nav class="navbar navbar-default navbar-static-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
   <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class='navbar-inner nav-collapse' style="height: auto;">
       <ul class="nav navbar-nav">
-        <li class="active">
-        <li><%= link_to 'Home', root_url %></li>
-        <li><%= link_to 'Officials', officials_index_path  %></li>
-        <li><%= link_to 'Schedule', schedule_index_path %></li>
-        <li><%= link_to 'Teams', teams_index_path %></li>
-        <li><%= link_to 'Players', players_index_path %></li>
-        <li><%= link_to 'Official Guidelines', guidelines_index_path %></li>
-        <li><%= link_to 'Gallery', gallery_index_path %></li>       
+        <li class="<%= 'active' if current_page?(root_url) %>"><%= link_to 'Home', root_url %></li>
+        <li class="<%= 'active' if current_page?(officials_index_path) %>"><%= link_to 'Officials', officials_index_path  %></li>
+        <li class="<%= 'active' if current_page?(schedule_index_path) %>"><%= link_to 'Schedule', schedule_index_path %></li>
+        <li class="<%= 'active' if current_page?(teams_index_path) %>"><%= link_to 'Teams', teams_index_path %></li>
+        <li class="<%= 'active' if current_page?(players_index_path) %>"><%= link_to 'Players', players_index_path %></li>
+        <li class="<%= 'active' if current_page?(guidelines_index_path) %>"><%= link_to 'Official Guidelines', guidelines_index_path %></li>
+        <li class="<%= 'active' if current_page?(gallery_index_path) %>"><%= link_to 'Gallery', gallery_index_path %></li>       
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Sign Up', signup_index_path %></li>
+        <li class="<%= 'active' if current_page?(signup_index_path) %>"><%= link_to 'Sign Up', signup_index_path %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
