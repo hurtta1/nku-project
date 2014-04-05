@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 <head>
-  <title>NkuProject</title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
+  <%= stylesheet_link_tag "application" %>
+  </head>
 <body>
-
-<%= yield %>
-
-</body>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active">
+        <li><%= link_to 'Home', root_url, class: '' %></li>
+        <li><%= link_to 'Officials', officials_index_path  %></li>
+        <li><%= link_to 'Schedule', root_url, class: '' %></li>
+        <li><%= link_to 'Teams', teams_index_path %></li>
+        <li><%= link_to 'Players', players_index_path %></li>
+        <li><%= link_to 'Official Guidelines', root_url, class: '' %></li>
+        <li><%= link_to 'Gallery', root_url, class: '' %></li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Sign Up', root_url, class: '' %></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  </body>
 </html>

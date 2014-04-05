@@ -1,4 +1,7 @@
 class PlayersController < ApplicationController
+  def index
+
+  end
   def new 
     @player = Player.new
   end
@@ -10,9 +13,7 @@ class PlayersController < ApplicationController
     end
   end
   
-  def index
-    @player = Player.all
-  end
+ 
 
   def destroy
     @player = Player.find(params[:id])
