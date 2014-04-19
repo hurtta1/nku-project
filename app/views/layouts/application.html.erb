@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <%= stylesheet_link_tag "application" %>
-  </head>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+</head>
 <body>
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
   <div class="container-fluid">
     <div class='navbar-inner nav-collapse' style="height: auto;">
       <ul class="nav navbar-nav">
         <li class="<%= 'active' if current_page?(root_url) %>"><%= link_to 'Home', root_url %></li>
-        <li class="<%= 'active' if current_page?(officials_index_path) %>"><%= link_to 'Officials', officials_index_path  %></li>
-        <li class="<%= 'active' if current_page?(schedule_index_path) %>"><%= link_to 'Schedule', schedule_index_path %></li>
-        <li class="<%= 'active' if current_page?(teams_index_path) %>"><%= link_to 'Teams', teams_index_path %></li>
-        <li class="<%= 'active' if current_page?(players_index_path) %>"><%= link_to 'Players', players_index_path %></li>
-        <li class="<%= 'active' if current_page?(guidelines_index_path) %>"><%= link_to 'Official Guidelines', guidelines_index_path %></li>
-        <li class="<%= 'active' if current_page?(gallery_index_path) %>"><%= link_to 'Gallery', gallery_index_path %></li>       
+        <li class="<%= 'active' if current_page?(officials_path) %>"><%= link_to 'Officials', officials_path  %></li>
+        <li class="<%= 'active' if current_page?(schedules_path) %>"><%= link_to 'Schedule', schedules_path %></li>
+        <li class="<%= 'active' if current_page?(teams_path) %>"><%= link_to 'Teams', teams_path %></li>
+        <li class="<%= 'active' if current_page?(players_path) %>"><%= link_to 'Players', players_path %></li>
+        <li class="<%= 'active' if current_page?(guidelines_path) %>"><%= link_to 'ASA Official Guidelines', guidelines_path %></li>    
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="<%= 'active' if current_page?(signup_index_path) %>"><%= link_to 'Sign Up', signup_index_path %></li>
+        <li class="<%= 'active' if current_page?(new_player_path) %>"><%= link_to 'Sign Up', new_player_path %></li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
-  </body>
+</body>
 </html>

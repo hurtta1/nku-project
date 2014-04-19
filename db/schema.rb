@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140404200900) do
+ActiveRecord::Schema.define(version: 20140419045404) do
 
-  create_table "church", force: true do |t|
-    t.string "church_name"
+  create_table "churches", force: true do |t|
+    t.string "name"
     t.string "email"
   end
 
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20140404200900) do
     t.boolean "third"
     t.boolean "short"
     t.boolean "outfield"
+    t.string  "team"
+    t.string  "church"
   end
 
   create_table "teams", force: true do |t|

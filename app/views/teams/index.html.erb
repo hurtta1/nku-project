@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h1>League Teams</h1>
+</div>
+
+<% @teams.each do |team| %>
+  <div id="<%= dom_id(team) %>" class="list-item">
+    <div class="info-block">
+      <h4><%= team.name %></h4>
+      <p><%= team.church_name %></p>
+    </div>
+  </div>
+<% end %>

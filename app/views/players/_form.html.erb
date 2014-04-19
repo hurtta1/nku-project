@@ -1,0 +1,47 @@
+<%= form_for Player.new do |f| %>
+  <% if @player.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@player.errors.count, "error") %> Please check your submission:</h2>
+    <ul>
+    <% @player.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :Name  %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :Number %><br>
+    <%= f.text_field :number %>
+  </p>
+
+  <p>
+    <%= f.label :Email %><br>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :Age %><br>
+    <%= f.text_field :age %>
+  </p>
+
+  <p>
+    <%=f.check_box :coach %>
+    <%=f.check_box :pitcher %>
+    <%=f.check_box :catcher %>
+    <%=f.check_box :first %>
+    <%=f.check_box :second %>
+    <%=f.check_box :third %>
+    <%=f.check_box :short %>
+    <%=f.check_box :coach %>
+    <%=f.check_box :outfield %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
   def index
+    @player = Player.all
   end
   
   def new 
@@ -21,6 +22,6 @@ class PlayersController < ApplicationController
 
  private  
   def player_params
-    params.require(:player).permit(:name, :number, :age)
+    params.require(:player).permit(:name, :number, :age, :email)
   end
 end
