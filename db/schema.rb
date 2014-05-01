@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419045404) do
+ActiveRecord::Schema.define(version: 20140501022556) do
 
   create_table "churches", force: true do |t|
     t.string "name"
@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(version: 20140419045404) do
     t.string  "number"
     t.boolean "official"
     t.boolean "admin"
+    t.string  "username"
+    t.string  "password"
+    t.string  "password_digest"
+    t.string  "password_confirmation"
   end
 
   create_table "players", force: true do |t|
@@ -41,6 +45,12 @@ ActiveRecord::Schema.define(version: 20140419045404) do
     t.boolean "outfield"
     t.string  "team"
     t.string  "church"
+    t.boolean "assigned"
+  end
+
+  create_table "posts", force: true do |t|
+    t.string "title"
+    t.string "body"
   end
 
   create_table "teams", force: true do |t|

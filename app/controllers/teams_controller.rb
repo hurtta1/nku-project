@@ -8,9 +8,11 @@ class TeamsController < ApplicationController
   end
   
   def create
-    @tean = Team.new(params[:team].permit(:church_name, :contact))
+    @team = Team.create(team_params)
     if @team.save
       redirect_to teams_path, message: "Team Created."
+    else
+      render 'new'
     end
   end
 
@@ -22,6 +24,6 @@ class TeamsController < ApplicationController
 
  private  
   def team_params
-    params.require(:team).permit(:church_name, :contact)
+    params.require(:team).permit!
   end
 end

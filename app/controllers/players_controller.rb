@@ -11,7 +11,17 @@ class PlayersController < ApplicationController
     @player = Player.create(player_params)
     if @player.save
       redirect_to players_path
+    else 
+      render 'new'
     end
+  end
+  
+  def edit
+    @player = current_player
+  end
+  
+  def update
+    current_player.update_attributes(player_params)
   end
   
   def destroy

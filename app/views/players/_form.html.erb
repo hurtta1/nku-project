@@ -7,42 +7,44 @@
       <% @player.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-      </ul>
+      </ul> 
     </div>
-  <% end %>
-  <p>
+<% end %>
+<div class="row col-sm-4">
+  <div class="form-group">
     <%= f.label :Name  %><%= mark_required(@player, :name) %><br>
-    <%= f.text_field :name %>
-  </p>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
  
-  <p>
+  <div class="form-group">
     <%= f.label :Number %><%= mark_required(@player, :name) %><br>
-    <%= f.text_field :number %>
-  </p>
+    <%= f.text_field :number, class: 'form-control' %>
+  </div>
 
-  <p>
+  <div class="form-group">
     <%= f.label :Email %><br>
-    <%= f.text_field :email %>
-  </p>
+    <%= f.text_field :email, class: 'form-control' %>
+  </div>
 
-  <p>
+  <div class="form-group">
     <%= f.label :Age %><%= mark_required(@player, :name) %><br>
-    <%= f.text_field :age %>
-  </p>
+    <%= f.text_field :age, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%=f.label :'Select all positions that apply'%><br>
+    <%=f.check_box :coach %> <%= f.label :Coach %><br>
+    <%=f.check_box :pitcher %> <%= f.label :Pitcher%><br>
+    <%=f.check_box :catcher %> <%= f.label :Catcher%><br>
+    <%=f.check_box :first %> <%= f.label :'First Base'%><br>
+    <%=f.check_box :second %> <%= f.label :'Second Base'%><br>
+    <%=f.check_box :third %> <%= f.label :'Third Base'%><br>
+    <%=f.check_box :short %> <%= f.label :Shortstop%><br>
+    <%=f.check_box :outfield %> <%= f.label :Outfield%><br>
+  </div>
 
   <p>
-    <%='Select all positions that apply'%><br>
-    <%=f.check_box :coach %> Coach<br>
-    <%=f.check_box :pitcher %> Pitcher<br>
-    <%=f.check_box :catcher %> Catcher<br>
-    <%=f.check_box :first %> First Base<br>
-    <%=f.check_box :second %> Second Base<br>
-    <%=f.check_box :third %> Third Base<br>
-    <%=f.check_box :short %> Shortstop<br>
-    <%=f.check_box :outfield %> Outfield<br>
-  </p>
-
-  <p>
-    <%= f.submit %>
+    <%= f.submit "Sign Up!", class: 'btn btn-primary' %>
   </p>
 <% end %>
+</div>

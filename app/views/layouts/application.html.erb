@@ -2,8 +2,7 @@
 <html>
 <head>
   <%= stylesheet_link_tag    "application", media: "all" %>
-</head>
-<body>
+
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
   <div class="container-fluid">
     <div class='navbar-inner nav-collapse' style="height: auto;">
@@ -17,6 +16,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="<%= 'active' if current_page?(new_player_path) %>"><%= link_to 'Sign Up', new_player_path %></li>
+        <li class="<%= 'active' if current_page?(new_player_path) %>"><%= link_to 'Sign In', new_session_path %></li>
       </ul>
     </div>
   </div>
@@ -24,5 +24,5 @@
   <div class="container">
     <%=yield %>
   </div>
-</body>
+ </head>
 </html>
