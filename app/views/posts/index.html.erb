@@ -1,0 +1,9 @@
+  <% @post.each do |post| %>
+  <div id="<%= dom_id(team) %>" class="list-item">
+    <div class="info-block">
+      <h4><%= post.title %></h4>
+      <p><%= post.body %></p>
+      <p><%= post.created_on %></p>
+    </div>
+  </div>
+<% end %>
