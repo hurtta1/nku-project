@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
 private
   def current_official
-    @current_official ||= Student.find_by(id: session[:official_id]) if session[:official_id].present?
+    @current_official ||= Official.find_by(id: session[:official_id]) if session[:official_id].present?
   end
   helper_method :current_official
 

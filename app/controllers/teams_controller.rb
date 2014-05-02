@@ -10,7 +10,7 @@ class TeamsController < ApplicationController
   def create
     @team = Team.create(team_params)
     if @team.save
-      redirect_to teams_path, flash: "Team Created."
+      redirect_to teams_path
     else
       render 'new'
     end
@@ -19,7 +19,7 @@ class TeamsController < ApplicationController
   def update
     current_team.update_attributes(team_params)
     if @team.update(team_params)
-        redirect_to teams_path, flash: "Team status updated"
+        redirect_to teams_path
     else
         render 'edit'
     end

@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.create(event_params)
     if @event.save
-      redirect_to events_path, flash: "Event Created."
+      redirect_to events_path
     else
       render 'new'
     end
@@ -19,7 +19,7 @@ class EventsController < ApplicationController
   def update
     current_event.update_attributes(event_params)
     if @event.update(event_params)
-      redirect_to events_path, flash: "Event updated"
+      redirect_to events_path
     else
         render 'edit'
     end

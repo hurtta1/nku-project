@@ -13,25 +13,13 @@
 <% @event.each do |s| %>
 <div class="container">
   <div class="row">
-    <div class="col-md-10">   
-      <div class="panel">
-        <div class="panel-body">  
-		      <div class="row"> 
-            <div class="col-md-10">
-              <h2><%= 'Upcomming Event: ' %><%= s.name %></h2>
-              <div class="row">
-                <div class="col-xs-9">
-                  <div class="info-block">
-                    <h4><%= 'Event Location: ' %><%= s.location %></h4>
-                    <h4><%= 'Event Date: ' %><%= s.eventdate %></h4>
-                    <h4><%= 'Event Description: ' %><%= s.description %></h4>
-                   </div>
-                </div>
-            </div>
-          </div>
-          <hr>  
+    <div class="col-md-10">
+      <h2><%= 'Upcomming Event: ' %><%= s.name %></h2>
+        <div class="info-block">
+          <h4><%= 'Event Location: ' %><%= s.location %></h4>
+          <h4><%= 'Event Date: ' %><%= s.eventdate %></h4>
+          <h4><%= 'Event Description: ' %><%= s.description %></h4>
         </div>
-      </div>
    	</div>
   </div>
 </div> 
