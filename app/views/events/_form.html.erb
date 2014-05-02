@@ -1,0 +1,34 @@
+<%= form_for [@event] do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> present.  Please address the following errors:</h2>
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :'Event Type: ' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :'Event Location: ' %>
+    <%= f.text_field :location, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :'Event Date: ' %>
+    <%= f.date_field :eventdate, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :'Event Description' %>
+    <%= f.text_area :description, :size => "100%x15%", class: 'form-control' %>
+  </div>
+
+  <%= f.submit "Post new event", class: 'btn btn-primary' %>
+<% end %>

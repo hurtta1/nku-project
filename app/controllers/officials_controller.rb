@@ -1,5 +1,5 @@
 class OfficialsController < ApplicationController
-  before_filter :require_authentication
+  skip_before_filter :require_authentication, only: [:new, :create]
   
   def index
     @official = Official.all

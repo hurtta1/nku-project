@@ -2,42 +2,37 @@
 <html> 
 <div class="page-header">
   <h1>League Players</h1>
-  
-  <th><button class="btn btn-default btn-lg" type="button"><%=link_to "Add to Team", new_team_path %></button></th>
 </div>
- 
-  <div class="wrapper">
-    <table class="player table">
-      <thead>
-        <tr>
-          <th>Player Name</th>
-          <th>Team/Church</th>
-        </tr>
-      </thead>
-  
-      <tbody>
-        <% @player.each do |player| %>
-        <% if !player.team.blank? %> 
-        <tr id="<%= dom_id(player) %>" class="list-item">
-              <td><%= player.name %></td>
-              <td><%= player.team %></td>
-            </tr>
+<% @player.each do |p| %>
+<div class="container">
+  <div class="col-md-10">   
+    <h3><%= 'Player Name: ' %><%= p.name %></h3>
+      <div class="info-block">
+        <% if current_official %>
+           <h4><%= 'Church: ' %><%= p.church %></h4>
+           <h4><%= 'Age: ' %><%= p.age %></h4>
+           <h4><%= 'Email: ' %><%= p.email %></h4>
+           <% if p.team.blank? %>
+             <h4><%= 'Player currently unnasigned' %>
+           <% else %>
+             <h4><%= 'Team: ' %><%= p.team %></h4> 
           <% end %>
-      </tbody>
-    </table>
+       <% end %> 
+   	</div>
   </div>
-
+</div> 
+<% end %>
   
-<div id="unasigned-players">
-  <h3>Unassigned Player List   <%=select_tag 'Available Church Teams[]', options_from_collection_for_select(Team.all, :name, :name) %></h3>
-   <% @player.each do |player| %>
-    <% if player.team.blank? %> 
-      <div id="<%=dom_id(player)%>" class="list-item">
-        <div class="info-block">
-          <h4><%= player.name %></h4>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <% end %>
-  <% end %>
+  <%#<div id="unasigned-players">
+  <%#<h3>Unassigned Player List   <%=select_tag 'Available Church Teams[]', options_from_collection_for_select(Team.all, :name, :name) %></h3>
+  <%# <% @player.each do |player| %>
+  <%#  <% if player.team.blank? %> 
+  <%#    <div id="<%=dom_id(player)%>" class="list-item">
+  <%#      <div class="info-block">
+  <%#        <h4><%= player.name %></h4>
+  <%#      </div>
+  <%#    </div>
+  <%#  <% end %>
+ <%# </div>
+ <%# <% end %>
+ <%# <% end %>
